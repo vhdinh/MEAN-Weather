@@ -1,0 +1,31 @@
+<div ng-controller="mainController">
+	<h1>Weather Forcast</h1>
+		<h3>Search Weather by City</h3>
+		<input type="text" ng-model="weatherLoc" placeholder={{currLoc}}>
+		<button ng-click="weatherLocation()">Get Location's Weather</button>
+		<h3>Current Location: {{currLoc}}</h3>
+			<table class="table table-hover">
+				<thead>
+					<th>Date</th>
+					<th>Summary</th>
+					<th>Min Temp</th>
+					<th>Max Temp</th>
+					<th>Sunrise</th>
+					<th>Sunset</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="x in weather.daily.data">
+						<td ng-bind="x.reldate"></td>
+						<td ng-bind="x.summary"></td>
+						<td ng-bind="x.temperatureMin"></td>
+						<td ng-bind="x.temperatureMax"></td>
+						<td ng-bind="x.sunrise"></td>
+						<td ng-bind="x.sunset"></td>
+
+					</tr>
+				</tbody>
+			</table>
+
+
+	<!-- {{weather.daily.data}} -->
+</div>
