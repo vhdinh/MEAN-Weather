@@ -4,6 +4,7 @@ var app = express();
 var path = require("path");
 
 app.use(express.static(path.join(__dirname, "./client")));
+app.use(express.static(path.join(__dirname, "./node_modules")));
 
 port = 8000
 app.listen(port, function(){
